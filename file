@@ -1,1 +1,85 @@
+# Function definition
+def main():
+	#Get user name
+	name = input("Enter your name: ").strip().title()
+	print()
+	print (f"It's nice meeting you, {name}")
+	
+	while True:
+		try:
+			
+			print()
+			
+			#Give further information about the program to user
+			
+			print ("  This  program  calculates  the  value  of inputted  'mass' , 'height'  and  a  constant  'g' (given that g = 'Acceleration due to gravity', is taken to be 10m/s²(metres per second squared)) to  give  the  value  of the  Potential  Energy  of  a  motorcycle  at a  given  height. ")
+			
+			print ()
+			
+			# Collect user input on MASS and HEIGHT
+			
+			mass = convert_mass(float(input("Enter a value for mass (in kg) : ")))
+			
+			print()
+			
+			height = convert_height(float(input("Enter a value for height (in metres) : ")))
+		
+			print()
+			
+		# Assign value to variable G and print answer
+			
+			g = float(10)
+			
+			potential_energy = mass * height * g
+			
+			print (f"The Potential Energy of the motorcycle is: {potential_energy:,.2f} joules")
+			
+		# Write the failsafe code to prevent input type error
+		
+		except ValueError:
+			
+			print()
+			
+			print ("Program restart!! Please enter a valid value for mass/height")
+			
+			print()
+			
+			continue
+			
+			#Write the code for system looping
+		restart = input("Do you wish to restart the program (yes/no):  ").strip().casefold()
+		
+		print()
+		# Run conditional statement
+		if restart == "no":
+			
+			print (f"It's sad to see you go!😭 {name}")
+			
+			print()
+			
+			break
+			
+		elif restart != "yes": #
+			
+			#Error statement
+			print (f"{name}, you entered a wrong statement, please try again next time.")
+			break
+			
+		print(f"Welcome back, {name}")
+		
+		print()
+		
+		print (f"Another round of calculations then, {name} ")
+		
+		#define our convert function
+	
 
+
+def convert_mass(m):
+	#defined the MASS Function
+	return float(m)
+	
+def convert_height(h):
+	return float(h)			
+			
+main()			
